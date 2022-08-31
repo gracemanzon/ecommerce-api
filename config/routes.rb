@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/product_notebook", controller: "products", action: "product_notebook"
   get "/product_pen", controller: "products", action: "product_pen"
   get "/product_printer", controller: "products", action: "product_printer"
+  # alternate syntax -- get "/product_printer" => "products#product_printer"
 end
