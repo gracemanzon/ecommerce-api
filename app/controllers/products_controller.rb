@@ -19,4 +19,16 @@ class ProductsController < ApplicationController
     product.save
     render json: product.as_json
   end
+
+  def update
+    product = Product.find_by(id: params["id"])
+
+    product.name = params["name"]
+    product.price = params["price"]
+    product.image_url = params["url"]
+    product.description = params["description"]
+
+    product.save
+    render json: product.as_json
+  end
 end
