@@ -26,3 +26,6 @@ Content-Type: application/json
   "url": "https://i.etsystatic.com/29642716/r/il/e95cce/3217855779/il_570xN.3217855779_9ock.jpg",
   "description": "test update description"
 }
+
+### Product Delete/Destroy Action
+DELETE  http://localhost:3000/products/5.json
