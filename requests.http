@@ -6,3 +6,12 @@ GET  http://localhost:3000/products/1.json
 
 ### Product Create Action
 POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "test name",
+  "price": 0,
+  "url": "https://i.etsystatic.com/29642716/r/il/e95cce/3217855779/il_570xN.3217855779_9ock.jpg",
+  "description": "test description"
+
+}
