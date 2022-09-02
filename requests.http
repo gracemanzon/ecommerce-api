@@ -2,7 +2,7 @@
 GET http://localhost:3000/products.json
 
 ### Product Show Action
-GET  http://localhost:3000/products/1.json
+GET  http://localhost:3000/products/6.json
 
 ### Product Create Action
 POST http://localhost:3000/products.json
