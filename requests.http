@@ -10,10 +10,10 @@ Content-Type: application/json
 
 {
   "name": "test name",
-  "price": 0,
+  "price": 2.00,
   "image_url": "https://i.etsystatic.com/29642716/r/il/e95cce/3217855779/il_570xN.3217855779_9ock.jpg",
-  "description": "test description"
-
+  "description": "test description",
+  "inventory": 3
 }
 
 ### Product Update Action
@@ -24,7 +24,8 @@ Content-Type: application/json
   "name": "test update name",
   "price": 1,
   "image_url": "image not found",
-  "description": "test update description"
+  "description": "test update description",
+  "inventory": 1
 }
 
 ### Product Delete/Destroy Action

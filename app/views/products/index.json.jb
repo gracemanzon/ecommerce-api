@@ -5,6 +5,7 @@
     price: product.price,
     image_url: product.image_url,
     description: product.description,
+    inventory: product.inventory,
     created_at: product.created_at,
     updated_at: product.updated_at,
   }
