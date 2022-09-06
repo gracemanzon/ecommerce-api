@@ -6,6 +6,7 @@
     image_url: product.image_url,
     description: product.description,
     inventory: product.inventory,
+    supplier_id: product.supplier_id,
     created_at: product.created_at,
     updated_at: product.updated_at,
   }

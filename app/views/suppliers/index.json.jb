@@ -1,0 +1,6 @@
+@suppliers.map do |supplier|
+  {
+    id: supplier.id,
+    url: supplier_url(supplier, format: :json)
+  }
+end

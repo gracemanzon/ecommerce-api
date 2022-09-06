@@ -6,6 +6,7 @@
   description: @product.description,
   is_discounted: @product.is_discounted?,
   inventory: @product.inventory,
+  supplier_id: @product.supplier_id,
   created_at: @product.created_at,
   updated_at: @product.updated_at,
 }
