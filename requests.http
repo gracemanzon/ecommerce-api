@@ -10,10 +10,10 @@ Content-Type: application/json
 
 {
   "name": "test name",
-  "price": 2.00,
-  "image_url": "https://i.etsystatic.com/29642716/r/il/e95cce/3217855779/il_570xN.3217855779_9ock.jpg",
+  "price": 1.00,
+  "image_url": "https://i0.wp.com/images-na.ssl-images-amazon.com/images/I/51RF3BPH4-L.jpg?fit=500%2C500&ssl=1",
   "description": "test description",
-  "inventory": 3
+  "inventory": 1
 }
 
 ### Product Update Action
