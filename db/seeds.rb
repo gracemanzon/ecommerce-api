@@ -29,3 +29,21 @@ Product.create({
   description: "Thermal printer for text, photos and stickers.",
   inventory: 10,
 })
+
+Supplier.create({
+  name: "Pilot",
+  email: "pilot@email.com",
+  phone_number: "123.456.7890",
+})
+
+Supplier.create({
+  name: "Poooli",
+  email: "poooli@email.com",
+  phone_number: "987.654.3210",
+})
+
+Supplier.create({
+  name: "Stationary R' Us",
+  email: "stationary@email.com",
+  phone_number: "321.654.0987",
+})
