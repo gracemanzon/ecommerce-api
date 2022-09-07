@@ -3,10 +3,10 @@
     id: product.id,
     name: product.name,
     price: product.price,
-    image_url: product.image_url,
     description: product.description,
     inventory: product.inventory,
     supplier_id: product.supplier_id,
+    images: product.images,
     created_at: product.created_at,
     updated_at: product.updated_at,
   }

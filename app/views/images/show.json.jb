@@ -1,7 +1,0 @@
-{
-  id: @image.id,
-  url: @image.product_id,
-  product_id: @product.product_id,
-  created_at: @image.created_at,
-  updated_at: @image.updated_at,
-}
