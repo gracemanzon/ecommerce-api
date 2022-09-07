@@ -33,3 +33,14 @@ DELETE  http://localhost:3000/products/5.json
 
 ### Supplier Index Action
 GET http://localhost:3000/suppliers.json
+
+### User Create Action
+POST http://localhost:3000/users.json 
+Content-Type: application/json
+
+{
+  "name": "new user name",
+  "email": "new user email",
+  "password": "password",
+  "password_confirmation": "password"
+}
