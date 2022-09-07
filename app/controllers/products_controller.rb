@@ -15,7 +15,6 @@ class ProductsController < ApplicationController
       price: params["price"],
       description: params["description"],
       inventory: params["inventory"],
-
     )
 
     if @product.save
@@ -28,7 +27,6 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params["id"])
-
     @product.name = params["name"] || @product.name
     @product.price = params["price"] || @product.price
     @product.description = params["description"] || @product.description
