@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
   validates :description, length: { maximum: 100 }
   validates :inventory, numericality: true
-  belongs_to :supplier
+  belongs_to :supplier, :order
   has_many :images
 
   def is_discounted?
