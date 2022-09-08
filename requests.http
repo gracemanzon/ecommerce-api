@@ -1,5 +1,6 @@
 ### Product Index Action
 GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjI3NDEwNDF9.FjDT7EDEnzUltGpkyZ1RUFdZR3bLgZhkCuY1kYVOJc8
 
 ### Product Show Action
 GET  http://localhost:3000/products/5.json
@@ -45,7 +46,7 @@ Content-Type: application/json
   "password_confirmation": "password"
 }
 
-### Session Create Action
+### Session Create Action (login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
