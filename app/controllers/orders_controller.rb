@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     tax = product.tax * params["quantity"].to_i
     total = subtotal + tax
 
-    order = Order.new(
+    @order = Order.new(
       user_id: current_user.id,
       product_id: params["product_id"],
       quantity: params["quantity"],
@@ -14,18 +14,18 @@ class OrdersController < ApplicationController
       total: total,
     )
 
-    if order.save
-      render json: { message: "order saved properly", order: order.as_json }
+    if @order.save
+      render template: "orders/show"
     else
       render json: { error: "order not saved properly" }
     end
   end
 
   def show
-    order = Order.find_by(id: params["id"])
+    @order = Order.find_by(id: params["id"])
 
-    if current_user && current_user.id == order.user_id
-      render json: { order: order.as_json }
+    if current_user && current_user.id == @order.user_id
+      render template: "orders/show"
     else
       render json: { message: "you are not authorized to view this page" }, status: :unauthorized
     end
@@ -33,8 +33,8 @@ class OrdersController < ApplicationController
 
   def index
     if current_user
-      orders = current_user.orders
-      render json: { user_id: orders.as_json }
+      @orders = current_user.orders
+      render template: "orders/index"
     else
       render json: { message: "please log in to view orders" }, status: :unauthorized
     end
