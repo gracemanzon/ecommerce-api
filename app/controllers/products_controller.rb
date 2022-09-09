@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @products = Product.all
     pp current_user
@@ -11,24 +13,24 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if current_user && current_user.admin
-      @product = Product.new(
-        name: params["name"],
-        price: params["price"],
-        description: params["description"],
-        inventory: params["inventory"],
-        supplier: params { "supplier_id" },
-      )
+    # if current_user && current_user.admin
+    @product = Product.new(
+      name: params["name"],
+      price: params["price"],
+      description: params["description"],
+      inventory: params["inventory"],
+      supplier: params { "supplier_id" },
+    )
 
-      if @product.save
-        Image.create(url: params["image_url"], product_id: @product.id)
-        render template: "products/show"
-      else
-        render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
-      end
+    if @product.save
+      Image.create(url: params["image_url"], product_id: @product.id)
+      render template: "products/show"
     else
-      render json: {}, status: :unauthorized
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
+    # else
+    #  render json: {}, status: :unauthorized
+    # end
   end
 
   def update

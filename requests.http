@@ -60,6 +60,7 @@ Content-Type: application/json
   "password": "password"
 }
 
+# # ORDER ACTIONS ---------------------------
 ### Order Create Action
 POST http://localhost:3000/orders.json 
 # Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
@@ -72,11 +73,11 @@ Content-Type: application/json
 
 ### Order Show Action
 GET http://localhost:3000/orders/3.json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
 
 ### orders show only shows 1st order and can still belong to any user_id
 
 ### Order Index Action
 GET http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
 
