@@ -1,3 +1,4 @@
+# # PRODUCT ACTIONS ------------------------
 ### Product Index Action
 GET http://localhost:3000/products.json
 
@@ -12,9 +13,9 @@ Content-Type: application/json
   "name": "test name 2",
   "price": 2.00,
   "description": "test description 2",
-  "inventory": 2
+  "inventory": 2,
+  "supplier_id": 3
 }
-### look into "supplier must exist" error
 
 ### Product Update Action
 PATCH http://localhost:3000/products/1.json
@@ -32,9 +33,12 @@ Content-Type: application/json
 DELETE  http://localhost:3000/products/5.json
 
 
+# # SUPPLIER ACTIONS ----------------------------
 ### Supplier Index Action
 GET http://localhost:3000/suppliers.json
 
+
+# # USER ACTIONS -------------------------------
 ### User Create Action
 POST http://localhost:3000/users.json 
 Content-Type: application/json
@@ -46,6 +50,7 @@ Content-Type: application/json
   "password_confirmation": "password"
 }
 
+# # SESSION ACTIONS -----------------------
 ### Session Create Action (login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json

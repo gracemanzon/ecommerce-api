@@ -11,18 +11,23 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(
-      name: params["name"],
-      price: params["price"],
-      description: params["description"],
-      inventory: params["inventory"],
-    )
+    if current_user && current_user.admin
+      @product = Product.new(
+        name: params["name"],
+        price: params["price"],
+        description: params["description"],
+        inventory: params["inventory"],
+        supplier: params { "supplier_id" },
+      )
 
-    if @product.save
-      Image.create(url: params["image_url"], product_id: @product.id)
-      render template: "products/show"
+      if @product.save
+        Image.create(url: params["image_url"], product_id: @product.id)
+        render template: "products/show"
+      else
+        render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+      end
     else
-      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+      render json: {}, status: :unauthorized
     end
   end
 
