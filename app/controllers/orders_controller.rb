@@ -22,12 +22,21 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order = Order.find_by(id: current_user.id)
-    render json: { order: order.as_json }
+    order = Order.find_by(id: params["id"])
+
+    if current_user && current_user.id == order.user_id
+      render json: { order: order.as_json }
+    else
+      render json: { message: "you are not authorized to view this page" }, status: :unauthorized
+    end
   end
 
   def index
-    orders = Order.all
-    render json: { user_id: orders.as_json }
+    if current_user
+      orders = current_user.orders
+      render json: { user_id: orders.as_json }
+    else
+      render json: { message: "please log in to view orders" }, status: :unauthorized
+    end
   end
 end
