@@ -1,13 +1,15 @@
 class OrdersController < ApplicationController
   def create
+    product = Product.find_by(id: params["product_id"])
+    tax = product.price * 0.08
+
     order = Order.new(
-      user_id: params["user_id"],
+      user_id: current_user.id,
       product_id: params["product_id"],
       quantity: params["quantity"],
-      # static
-      subtotal: params["subtotal"],
-      tax: params["tax"],
-      total: params["total"],
+      subtotal: product.price,
+      tax: tax,
+      total: product.price + tax,
     )
 
     if order.save
@@ -18,8 +20,8 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order = Order.find_by(id: params["id"])
-    render json: { user_id: order.user_id, product_id: order.product_id, quantity: order.quantity, tax: order.tax, total: order.total }
+    order = Order.find_by(id: current_user.id)
+    render json: { order: order.as_json }
   end
 
   def index

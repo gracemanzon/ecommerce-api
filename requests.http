@@ -10,11 +10,12 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "test name",
-  "price": 1.00,
-  "description": "test description",
-  "inventory": 1
+  "name": "test name 2",
+  "price": 2.00,
+  "description": "test description 2",
+  "inventory": 2
 }
+### look into "supplier must exist" error
 
 ### Product Update Action
 PATCH http://localhost:3000/products/1.json
@@ -40,8 +41,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "new user name",
-  "email": "user@email.com",
+  "name": "grace",
+  "email": "grace@email.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -51,25 +52,26 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "user@email.com",
+  "email": "grace@email.com",
   "password": "password"
 }
 
 ### Order Create Action
 POST http://localhost:3000/orders.json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
 Content-Type: application/json
 
 {
-  "user_id": 1,
   "product_id": 3,
-  "quantity": 2,
-  "subtotal": 12.0,
-  "tax": 1,
-  "total": 13.0
+  "quantity": 2
 }
 
 ### Order Show Action
 GET http://localhost:3000/orders/1.json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
+
+### orders show only shows 1st order and can still belong to any user_id
 
 ### Order Index Action
 GET http://localhost:3000/orders.json
+
