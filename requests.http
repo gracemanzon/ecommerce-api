@@ -1,3 +1,6 @@
+# # REFERENCES
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MzYyNzR9.aiWltD42EC4W3SZdI0OSbrTRjCZjA2vBBfz7Fwh3iFk
+
 # # PRODUCT ACTIONS ------------------------
 ### Product Index Action
 GET http://localhost:3000/products.json
@@ -7,7 +10,7 @@ GET  http://localhost:3000/products/5.json
 
 ### Product Create Action
 POST http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MzYyNzR9.aiWltD42EC4W3SZdI0OSbrTRjCZjA2vBBfz7Fwh3iFk
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
