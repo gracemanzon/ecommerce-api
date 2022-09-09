@@ -20,10 +20,12 @@ class Product < ApplicationRecord
     return price + tax
   end
 
+  # # belongs_to -- under the hood
   # def supplier
   #   Supplier.find_by(id: supplier_id)
   # end
 
+  # # has_many -- under the hood
   # def images
   #   Image.where(product_id: id)
   # end
