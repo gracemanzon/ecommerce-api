@@ -1,23 +1,27 @@
 class OrdersController < ApplicationController
   def create
-    product = Product.find_by(id: params["product_id"])
-    subtotal = product.price * params["quantity"].to_i
-    tax = product.tax * params["quantity"].to_i
-    total = subtotal + tax
+    if current_user
+      product = Product.find_by(id: params["product_id"])
+      subtotal = product.price * params["quantity"].to_i
+      tax = product.tax * params["quantity"].to_i
+      total = subtotal + tax
 
-    @order = Order.new(
-      user_id: current_user.id,
-      product_id: params["product_id"],
-      quantity: params["quantity"],
-      subtotal: subtotal,
-      tax: tax,
-      total: total,
-    )
+      @order = Order.new(
+        user_id: current_user.id,
+        product_id: params["product_id"],
+        quantity: params["quantity"],
+        subtotal: subtotal,
+        tax: tax,
+        total: total,
+      )
 
-    if @order.save
-      render template: "orders/show"
+      if @order.save
+        render template: "orders/show"
+      else
+        render json: { error: "order not saved properly" }
+      end
     else
-      render json: { error: "order not saved properly" }
+      render json: { message: "you must log in to create a new order" }, status: :unauthorized
     end
   end
 

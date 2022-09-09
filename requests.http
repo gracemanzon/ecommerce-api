@@ -58,7 +58,7 @@ Content-Type: application/json
 
 ### Order Create Action
 POST http://localhost:3000/orders.json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
 Content-Type: application/json
 
 {
