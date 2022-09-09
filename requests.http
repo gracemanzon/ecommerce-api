@@ -7,6 +7,7 @@ GET  http://localhost:3000/products/5.json
 
 ### Product Create Action
 POST http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MzYyNzR9.aiWltD42EC4W3SZdI0OSbrTRjCZjA2vBBfz7Fwh3iFk
 Content-Type: application/json
 
 {

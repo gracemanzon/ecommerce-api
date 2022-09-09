@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       price: params["price"],
       description: params["description"],
       inventory: params["inventory"],
-      supplier: params { "supplier_id" },
+      supplier_id: params["supplier_id"],
     )
 
     if @product.save
