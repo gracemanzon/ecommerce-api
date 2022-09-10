@@ -22,7 +22,8 @@ Content-Type: application/json
 }
 
 ### Product Update Action
-PATCH http://localhost:3000/products/1.json
+PATCH http://localhost:3000/products/8.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -34,7 +35,8 @@ Content-Type: application/json
 }
 
 ### Product Delete/Destroy Action
-DELETE  http://localhost:3000/products/5.json
+DELETE  http://localhost:3000/products/6.json
+Authorization: Bearer {{jwt}}
 
 
 # # SUPPLIER ACTIONS ----------------------------
@@ -67,21 +69,17 @@ Content-Type: application/json
 # # ORDER ACTIONS ---------------------------
 ### Order Create Action
 POST http://localhost:3000/orders.json 
-# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4NjkxODJ9.nfIHQACX4HUWyafz1WSjtnePutueIT8nQHy1WnszzSU
 Content-Type: application/json
 
 {
-  "product_id": 3,
+  "product_id": 1,
   "quantity": 2
 }
 
 ### Order Show Action
 GET http://localhost:3000/orders/3.json 
-# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
-
-### orders show only shows 1st order and can still belong to any user_id
 
 ### Order Index Action
 GET http://localhost:3000/orders.json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MjY5NjF9.gP12vP7P0rVibLP8nYVUjrQftgIY8T3zYWzZWNXNgsk
 
