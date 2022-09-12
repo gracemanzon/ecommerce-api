@@ -6,6 +6,8 @@
     description: product.description,
     inventory: product.inventory,
     supplier_id: product.supplier_id,
+    is_discounted?: product.is_discounted?,
+    categories: product.categories,
     images: product.images,
     created_at: product.created_at,
     updated_at: product.updated_at,
