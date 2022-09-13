@@ -50,8 +50,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "grace",
-  "email": "grace@email.com",
+  "name": "mark",
+  "email": "mark@email.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -83,3 +83,15 @@ GET http://localhost:3000/orders/3.json
 ### Order Index Action
 GET http://localhost:3000/orders.json
 
+
+# # CARTEDPRODUCT ACTIONS ------------------------
+### CartedProduct Create Action
+POST http://localhost:3000/cartedproducts.json
+Content-Type: application/json
+
+{
+  "user_id": 4,
+  "product_id": 3,
+  "quantity": 2,
+  "status": "carted"
+}
