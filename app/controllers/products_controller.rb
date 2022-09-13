@@ -3,8 +3,13 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    pp current_user
-    render template: "products/index"
+
+    if params["category"]
+      category = Category.find_by(name: params["category"])
+      @products = category.products
+    else
+      render template: "products/index"
+    end
   end
 
   def show
