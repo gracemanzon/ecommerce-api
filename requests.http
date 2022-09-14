@@ -1,5 +1,5 @@
 # # REFERENCES
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4MzYyNzR9.aiWltD42EC4W3SZdI0OSbrTRjCZjA2vBBfz7Fwh3iFk
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NjMxODM0Mjd9.20co7MMNQBGOw6pBXKbfYW9r4Kgb95OqScPog7IVp4o
 
 # # PRODUCT ACTIONS ------------------------
 ### Product Index Action
@@ -62,36 +62,40 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "grace@email.com",
+  "email": "mark@email.com",
   "password": "password"
 }
 
 # # ORDER ACTIONS ---------------------------
 ### Order Create Action
 POST http://localhost:3000/orders.json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjI4NjkxODJ9.nfIHQACX4HUWyafz1WSjtnePutueIT8nQHy1WnszzSU
-Content-Type: application/json
-
-{
-  "product_id": 1,
-  "quantity": 2
-}
+Authorization: Bearer {{jwt}}
 
 ### Order Show Action
 GET http://localhost:3000/orders/3.json 
+Authorization: Bearer {{jwt}}
 
 ### Order Index Action
 GET http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
 
 
 # # CARTEDPRODUCT ACTIONS ------------------------
+### CartedProduct Index Action
+GET http://localhost:3000/cartedproducts.json
+Authorization: Bearer {{jwt}}
+
+
 ### CartedProduct Create Action
 POST http://localhost:3000/cartedproducts.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
   "user_id": 4,
   "product_id": 3,
-  "quantity": 2,
-  "status": "carted"
+  "quantity": 2
 }
+
+
+### NOTES:

@@ -1,5 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
+  has_many :carted_products
+  has_many :products, through: :carted_products
 end
 
 # create order controller with create action
