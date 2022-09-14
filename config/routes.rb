@@ -4,26 +4,27 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  # product paths
+  # products paths
   get "/products" => "products#index"
   get "/products/:id" => "products#show"
   post "/products" => "products#create"
   patch "/products/:id" => "products#update"
   delete "/products/:id" => "products#destroy"
 
-  # supplier paths
+  # suppliers paths
   get "/suppliers" => "suppliers#index"
 
-  # user paths
+  # users paths
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
 
-  # order paths
+  # orders paths
   post "/orders" => "orders#create"
   get "/orders/:id" => "orders#show"
   get "/orders" => "orders#index"
 
-  # cartedproduct paths
-  get "/cartedproducts" => "carted_products#index"
-  post "/cartedproducts" => "carted_products#create"
+  # carted_products paths
+  get "/carted_products" => "carted_products#index"
+  post "/carted_products" => "carted_products#create"
+  delete "/carted_products/:id" => "carted_products#destroy"
 end

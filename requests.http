@@ -82,12 +82,12 @@ Authorization: Bearer {{jwt}}
 
 # # CARTEDPRODUCT ACTIONS ------------------------
 ### CartedProduct Index Action
-GET http://localhost:3000/cartedproducts.json
+GET http://localhost:3000/carted_products.json
 Authorization: Bearer {{jwt}}
 
 
 ### CartedProduct Create Action
-POST http://localhost:3000/cartedproducts.json
+POST http://localhost:3000/carted_products.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -97,5 +97,8 @@ Content-Type: application/json
   "quantity": 2
 }
 
+### CartedProduct Delete Action
+DELETE http://localhost:3000/carted_products/5.json
+Authorization:  Bearer {{jwt}}
 
 ### NOTES:

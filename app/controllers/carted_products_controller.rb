@@ -22,4 +22,12 @@ class CartedProductsController < ApplicationController
       render json: { error: "your product has not been added to cart." }
     end
   end
+
+  def destroy
+    carted_product = current_user.carted_products.find_by(id: params["id"], status: "carted")
+    # soft delete - to retain data
+    carted_product.status = "removed"
+    carted_product.save
+    render json: { status: "carted product successfully removed" }
+  end
 end
